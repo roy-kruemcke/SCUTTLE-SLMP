@@ -3,5 +3,5 @@ A small logistics management robot using the SCUTTLE platform, LIDAR-based SLAM,
 
 
 This relies on the MXET/SCUTTLE project for many of the basics, which have been ported and organized.  The link to the original project repository can be found [here]
-{github.com/MXET/SCUTTLE}
+{https://github.com/MXET/SCUTTLE}
 
