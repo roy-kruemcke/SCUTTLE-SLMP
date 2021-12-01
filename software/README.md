@@ -20,3 +20,15 @@ The data flows up from each level to the next, allowing for subsystem testing.
 While an ROS2 implementation was considered, due to the difficulty in sourcing nodes
 and establishing the environment, it was decided to stay with the structures that we
 already knew.
+
+# Program Flow
+## Odometry
+  The robot will rely on wheel encoders and an IMU for odometry data; using a Kalman filter,
+  the pose will be estimated and used for localization.
+## SLAM
+  The SLAM implementation, based off xiaofeng's 2D LIDAR SLAM, will use an occupancy matrix
+  to build the environment; as more and more scans are taken, there will be more certainty
+  in the map data.
+## Autonomous Navigation (Possible)
+  The original proposal contained autonomous navigation using algorithms such as A* - while this
+  is still a goal that could be implemented, it is not likely to happen due to time constraints.
