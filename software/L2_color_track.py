@@ -63,10 +63,7 @@ def autoYeet(color_range,yote = 1,cont = 0,prev=None):
             
     v2 = color_range[1][2]
     
-    # what do you wanna tell joe byron right now?
-    # wassup baby, take me out to dinner *wink*
-    # AYO?!         
-            
+        
 
     if ans == 'hmin':
         if tmp == 'u':
