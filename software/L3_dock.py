@@ -28,10 +28,10 @@ import L2_speed_control as sc
 #import Servo_RPi as ser           #implement the new servo script
 
 # BLUE HSV ((90 60 100),(125 105 255))
-colorLeft_HSV = [(90,70,70),(125,125,255)]
+colorLeft_HSV = [(90,70,10),(125,125,255)]
 
 # ORANGE HSV ((0 100 180),(25 145 255))
-colorRight_HSV = [(0,70,110),(25,225,255)]
+colorRight_HSV = [(0,70,80),(25,225,255)]
 
 leftRadius,rightRadius = 0,0
 diff = 0                                        # positive = left color closer, negative = right color closer
@@ -126,25 +126,25 @@ def main(hasLoad):
         leftRadius = find_ColorLeft(colorLeft_HSV)
         rightRadius = find_ColorRight(colorRight_HSV)
 
-        leftLast5[k] = leftRadius
-        rightLast5[k] = rightRadius
+        leftLast3[k] = leftRadius
+        rightLast3[k] = rightRadius
         ''' print('Last 5 values:')
         print('Left: ',leftLast5)
         print('Right: ',rightLast5)
         print(average(leftLast5))'''
-        diff = diff_In_Radii(average(leftLast5),average(rightLast5))
+        diff = diff_In_Radii(average(leftLast3),average(rightLast3))
         #print("Radii difference: ",diff)
 
         #print()
         #print()
         #time.sleep(0.5)
         k = k + 1
-        if k > 4:
+        if k > 2:
             k = 0
 
         if search(leftRadius,rightRadius):
             reverse(diff)
-            if isDocked(average(leftLast5)) or isDocked(average(rightLast5)):
+            if isDocked(average(leftLast3)) or isDocked(average(rightLast3)):
                 print('Docked!')
                 break
 
