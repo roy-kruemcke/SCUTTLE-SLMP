@@ -120,6 +120,10 @@ def isDocked(leftRadius):
     if leftRadius > 220:
         return 1
 
+def undock():
+    pdl,pdr = max_phi*0.7,max_phi*0.7
+    sc.driveOpenLoop(sc.openLoop(pdl,pdr))
+
 def main(hasLoad):
     k = 0
     while(1):
@@ -150,9 +154,11 @@ def main(hasLoad):
 
     if hasLoad:
         #ser.setAngle(0)
+        undock()
         return 0
     else:
         #ser.setAngle(90)
+        undock()
         return 1
 
     return None
