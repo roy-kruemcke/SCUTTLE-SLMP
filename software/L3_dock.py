@@ -11,16 +11,15 @@
 
 #### TODO ####
 
-# get image from camera ---- might not need
-# Search for dock
-# Func for 1 color square
-# Func for other color square
-# get radii and distance to squares
-# Compare radii
-# adjust alignment
-# back into dock
-# repeat aligning as needed
-# call pickup or dropoff script
+# Search for dock                       -done
+# Func for 1 color square               -done
+# Func for other color square           -done
+# get radii and distance to squares     -done
+# Compare radii                         -done
+# adjust alignment                      -done
+# back into dock                        -done
+# repeat aligning as needed             -done
+# call pickup or dropoff script         -done
 
 import L2_color_track as tra
 import L2_speed_control as sc
@@ -35,7 +34,7 @@ colorRight_HSV = [(0,100,180),(25,145,255)]
 leftRadius,rightRadius = 0
 diff = 0                                        # positive = left color closer, negative = right color closer
 hasLoad = 0                                     # hasLoad decides if load or unload is called at end of dock
-tol = 5                                       # tol used to if reverse needs adjusting
+tol = 5                                         # tol used to check if reverse needs adjusting
 pdl,pdr = 0
 k = 0
 max_phi = 9.75                                  # maximum possible wheel speed
