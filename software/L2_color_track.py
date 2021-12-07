@@ -63,7 +63,10 @@ def autoYeet(color_range,yote = 1,cont = 0,prev=None):
             
     v2 = color_range[1][2]
     
-        
+    # what do you wanna tell joe byron right now?
+    # wassup baby, take me out to dinner *wink*
+    # AYO?!         
+            
 
     if ans == 'hmin':
         if tmp == 'u':
@@ -135,9 +138,15 @@ def colorTarget(color_range=((0, 0, 0), (255, 255, 255))): # function defaults t
 
     cnts = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL, 
             cv2.CHAIN_APPROX_SIMPLE)[-2]                        # generates number of contiguous "1" pixels
-    cv2.imshow('mask',mask)
-    cv2.imshow('orig', image)
-    cv2.waitKey(20)
+
+
+    '''********* Used for testing ***********'''
+    #cv2.imshow('mask',mask)
+    #cv2.imshow('orig', image)
+    #cv2.waitKey(20)
+    '''**************************************'''
+
+
     if len(cnts) > 0:                                           # begin processing if there are "1" pixels discovered
         c = max(cnts, key=cv2.contourArea)                      # return the largest target area
         ((x, y), radius) = cv2.minEnclosingCircle(c)            # get properties of circle around shape
@@ -159,10 +168,14 @@ def getAngle(x):                         # check deviation of target from center
 # THIS SECTION ONLY RUNS IF THE PROGRAM IS CALLED DIRECTLY
 if __name__ == "__main__":
     while True:
-        if yote:
+
+
+        '''if yote:
             print(color_range[0][0])
             color_range,yote,cont,prev=autoYeet(color_range,yote,cont,prev)
-            #color_range,yote = testing(color_range,yote)
+            #color_range,yote = testing(color_range,yote)'''
+
+
         target = colorTarget(color_range) # generate a target
         print(target)
         x = target[0]
