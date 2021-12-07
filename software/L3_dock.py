@@ -128,7 +128,7 @@ def main(hasLoad):
 
         leftLast5[k] = leftRadius
         rightLast5[k] = rightRadius
-       ''' print('Last 5 values:')
+        ''' print('Last 5 values:')
         print('Left: ',leftLast5)
         print('Right: ',rightLast5)
         print(average(leftLast5))'''
